@@ -24,5 +24,25 @@ export default {
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+}
 
+ul,li,ol{
+  list-style: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  color: inherit;
+}
+
+em,i{
+  font-style: normal;
+}
 </style>
