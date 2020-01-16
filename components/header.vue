@@ -28,6 +28,8 @@ export default {};
 .header-wrapper{
     height: 60px;
     background: #fff;
+    border-bottom:1px #eee solid;
+    box-shadow: 0 3px 2px #f6f6f6;
 }
 
 .header{
@@ -44,6 +46,7 @@ export default {};
     }
 
     .navs{
+        margin-left: 20px;
         flex: 1;
 
         a{
@@ -58,6 +61,15 @@ export default {};
                 color: #409eff;
             }
         }  
+
+        .nuxt-link-exact-active{
+            background: #409eff;
+            color: #fff;
+
+            &:hover{
+                color: #fff;
+            }
+        }
     }
 }
 </style>
