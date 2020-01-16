@@ -30,6 +30,9 @@ export default {};
     background: #fff;
     border-bottom:1px #eee solid;
     box-shadow: 0 3px 2px #f6f6f6;
+    min-width: 1000px;
+    position: relative;
+    z-index:2;
 }
 
 .header{
