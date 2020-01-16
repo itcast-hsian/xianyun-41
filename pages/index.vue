@@ -3,7 +3,7 @@
 		<!-- 轮播图 -->
 		<el-carousel height="700px" class="carousel">
 			<el-carousel-item v-for="(item, index) in banners" :key="index">
-				<div class="banner" :style="`background:url(${item}) center center no-repeat;`"></div>
+				<div class="banner" :style="`background:url(${$axios.defaults.baseURL + item.url}) center center no-repeat;`"></div>
 			</el-carousel-item>
 		</el-carousel>
 
@@ -39,8 +39,8 @@ export default {
 		return {
       // 轮播图的图片
 			banners: [
-				"http://157.122.54.189:9095/assets/images/th01.jfif",
-				"http://157.122.54.189:9095/assets/images/th02.jfif"
+				// "http://157.122.54.189:9095/assets/images/th01.jfif",
+				// "http://157.122.54.189:9095/assets/images/th02.jfif"
       ],
       
       // 搜索栏的数据
@@ -75,6 +75,17 @@ export default {
 
       this.current = index;
     }
+  },
+
+  mounted(){
+    // $axios是挂载个实例下的axios方法
+    this.$axios({
+      url: "/scenics/banners"
+    }).then(res => {
+      const {data} = res.data;
+      // 服务器的轮播图数据
+      this.banners = data;
+    })
   }
 };
 </script>
