@@ -83,7 +83,17 @@ export default {
             // valid是全部字段验证通过才会返回true
            this.$refs.form.validate(valid => {
                if(valid){
-                   // this.form
+
+                   this.$axios({
+                       url: "/accounts/login",
+                       method: "POST",
+                       data: this.form
+                   }).then(res => {
+                       console.log(res)
+                       
+                       // 跳转到首页
+                       // this.$router.push("/")
+                   })
                }
            })
         }
