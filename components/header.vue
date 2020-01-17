@@ -14,14 +14,18 @@
             </el-row>
             <!-- 登录注册 -->
             <div>
-                <nuxt-link to="/user/login">登录/注册</nuxt-link>
+                <nuxt-link to="/user/login">{{ $store.state.user.name }}</nuxt-link>
             </div>
         </el-row>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    mounted(){
+        console.log(this.$store.state.user.name)
+    }
+};
 </script>
 
 <style scoped lang="less">

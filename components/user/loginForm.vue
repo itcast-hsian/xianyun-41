@@ -89,7 +89,10 @@ export default {
                        method: "POST",
                        data: this.form
                    }).then(res => {
-                       console.log(res)
+                       const {data} = res;
+
+                       // 保存到本地
+                       // localStorage.setItem("store", JSON.stringify(data));
                        
                        // 跳转到首页
                        // this.$router.push("/")
