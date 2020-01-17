@@ -91,8 +91,14 @@ export default {
                    }).then(res => {
                        const {data} = res;
 
+                       // 把data存到store|vuex
+                       // this.$store.state.user.userInfo = data;
+
                        // 保存到本地
                        // localStorage.setItem("store", JSON.stringify(data));
+
+                       // 调用mutations的方法，把data存到store|vuex
+                       this.$store.commit("user/setUserInfo", data);
                        
                        // 跳转到首页
                        // this.$router.push("/")
