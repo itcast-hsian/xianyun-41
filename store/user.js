@@ -10,3 +10,10 @@ export const mutations = {
         state.userInfo = data;
     }
 };
+
+// 类似组件中computed
+// export const getter = {};
+
+// 异步修改state的数据
+// export const actions = {
+// }
